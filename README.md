@@ -45,5 +45,5 @@ The lexicon scan was built off the lexicon_test.py file as on page 232
 ```
 ## Acknowledgments
 
-* Inpired by 
+* https://github.com/reschaap
 
