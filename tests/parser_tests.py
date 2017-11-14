@@ -4,7 +4,7 @@ from ex48.parser import *
 
 @pytest.fixture()
 def test_sentence():
-    sentence = Sentence(("noun","player"),("verb", "go"),("noun", "bear"))
+    sentence = Sentence([("noun","player"),("verb", "go"),("noun", "bear")])
     assert_equal(sentence.subj, 'player')
     assert_equal(sentence.verb, 'go')
     assert_equal(sentence.obj, 'north')
