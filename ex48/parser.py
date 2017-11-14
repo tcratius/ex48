@@ -1,7 +1,6 @@
 class ParserError(Exception):
     pass
 
-
 class Sentence(object):
     # need a object to put results in i.e. results
     def __init__(self, subj, verb, obj):
@@ -9,7 +8,6 @@ class Sentence(object):
         self.subj = subj(1)
         self.verb = verb(1)
         self.obj = obj(1)
-
 
     def peek(word_list):
         if word_list:
@@ -33,8 +31,6 @@ class Sentence(object):
         while peek(word_list) == word_type:
             match(word_list, word_type)
 
-
-
     def parse_verb(word_list):
         skip(word_list, 'stop')
 
@@ -49,20 +45,14 @@ class Sentence(object):
         next_word = peek(word_list)
 
         if next_word == 'noun':
-            return match(self.word_list, 'noun')
+            return match(word_list, 'noun')
         elif next_word == 'direction':
             return match(word_list, 'direction')
         else:
             raise ParseError("Expected a noun or direction next. Received %s ") % wordlist
 
-    def parse_subject(word_list, subject):
-        self.verb = parse_verb(word_list)
-        self.object = parse_object(word_list)
 
-        return Sentence(subject, verb, object)
-
-
-    def parse_sentence(self, word_list):
+    def parse_sentence(word_list):
         skip(word_list, 'stop')
         next_word = peek(word_list)
 
@@ -74,3 +64,10 @@ class Sentence(object):
             return parse_subject(word_list, ('noun', 'player'))
         else:
             raise ParserError("Must start with subject, object, or verb not: %s.") % word_list
+
+    def parse_sentence(word_list):
+        subj = parse_subject
+        verb = parse_verb(word_list)
+        obj = parse_object(word_list)
+
+        return Sentence(subj, verb, obj)
