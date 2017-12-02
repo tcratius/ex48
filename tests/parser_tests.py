@@ -1,16 +1,17 @@
 import pytest
+from ex48.parser import Sentence
 
-from ex48.parser import *
 
 @pytest.fixture()
 def test_sentence():
-    sentence = Sentence([("noun","player"),("verb", "go"),("noun", "bear")])
-    assert_equal(sentence.subj, 'player')
-    assert_equal(sentence.verb, 'go')
-    assert_equal(sentence.obj, 'north')
+    sentence = Sentence.parse_sentence([("noun","player"),("verb", "go"),("noun", "bear")])
+    return sentence
 
+@classmethod
 def test_peek():
-    pass
+    result = test_sentence()
+    assert Sentence.peek(result) != None
+
 
 def test_match():
     pass

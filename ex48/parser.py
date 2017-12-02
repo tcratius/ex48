@@ -52,7 +52,7 @@ class Sentence(object):
             raise ParseError("Expected a noun or direction next. Received %s ") % wordlist
 
 
-    def parse_sentence(word_list):
+    def parse_subject(word_list):
         skip(word_list, 'stop')
         next_word = peek(word_list)
 
