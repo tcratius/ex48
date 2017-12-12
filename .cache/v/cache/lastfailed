@@ -1,4 +1,5 @@
 {
   "tests/lexicon_tests.py::test_numbers": true, 
+  "tests/parser_tests.py": true, 
   "tests/parser_tests.py::test_sentence": true
 }
