@@ -53,7 +53,7 @@ class Sentence(object):
         elif next_word == 'verb':
             return match(word_list, 'direction')
         else:
-            raise ParseError("Expected a noun or direction next. Received %s ") % wordlist
+            raise ParserError("Expected a noun or direction next. Received %s ") % wordlist
 
     def parse_subject(word_list):
         skip(word_list, 'stop')

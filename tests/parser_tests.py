@@ -3,6 +3,7 @@ import pytest
 from ex48 import parser
 from ex48.parser import Sentence
 
+# test parse_sentence
 @pytest.fixture()
 def test_sentence():
     sentence = Sentence.parse_sentence([("noun","player"),("verb", "go"),("noun", "bear")])
@@ -36,7 +37,7 @@ def test_parse_verb():
     assert parse_verb(word_list_one) != None
     assert parse_verb(word_list_two) != None
     assert parse_verb(word_list_three) != None
-    with pytest.raises(ParseError) as excinfo:
+    with pytest.raises(ParserError) as excinfo:
         parse_verb(word_list_four)
     assert str(excinfo.value) == "Expected a verb next. Received number "
 
@@ -49,13 +50,16 @@ def test_parse_object():
     assert parse_object(word_list_one) != None
     assert parse_object(word_list_two) != None
     assert parse_object(word_list_three) != None
-    with pytest.raises(ParseError) as excinfo:
+    with pytest.raises(ParserError) as excinfo:
         parse_object(word_list_four)
     assert str(excinfo.value) == "Expected a noun or direction next. Received error "
 
-
+@classmethod
 def test_parse_subject():
-    
-
-def test_parse_sentence():
-    pass
+    word_list_one = ([("noun", "conrad")])
+    # (player) hits conrad
+    word_list_two = ([("verb", "hits")])
+    word_list_three = ([("error", "run1")])
+    with pytest.raises(ParserError) as excinfo:
+        parse_subject(word_list_three)
+    assert str(excinfo.value) == "Expected a verb next."
