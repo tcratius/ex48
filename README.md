@@ -45,8 +45,7 @@ The lexicon scan was built off the lexicon_test.py file as on page 232
 ```
 ## Acknowledgments
 
-* https://github.com/reschaap //lexicon
 
-* https://github.com/ulfsjodin //testing
+* https://github.com/ulfsjodin //lexicon(restructure) and testing
 
 * https://github.com/jayk1p //testing
