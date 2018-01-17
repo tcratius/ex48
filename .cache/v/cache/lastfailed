@@ -1,5 +1,9 @@
 {
+  "tests/lexicon_tests.py::test_all[1234-expected_output10]": true, 
+  "tests/lexicon_tests.py::test_all[ASDFAD-expected_output9]": true, 
+  "tests/lexicon_tests.py::test_all[kronor-expected_output11]": true, 
+  "tests/lexicon_tests.py::test_all[meter-expected_output12]": true, 
   "tests/lexicon_tests.py::test_numbers": true, 
-  "tests/parser_tests.py::test_parse_object": true, 
+  "tests/parser_tests.py": true, 
   "tests/parser_tests.py::test_sentence": true
 }

@@ -10,7 +10,7 @@ config = {
     'download_url': 'Where to download it.',
     'author_email': 'tcratius@gmail.com',
     'version': '0.1',
-    'install_requires': ['nose', 'pytest'],
+    'install_requires': ['pytest'],
     'packages': ['ex48', 'tests'],
     'scripts': [],
     'name': 'Ex48'
