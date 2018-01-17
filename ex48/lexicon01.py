@@ -11,9 +11,9 @@ def scan(usr_input):
     result = []
     usr_input = usr_input.split()
     for word in usr_input:
-        wordtype = lexicon.get(word, 'error')
+        wordtype = lexicon.get(word, None)
         pair = (wordtype, word)
-
+        print pair
         if word in lexicon:
             result.append(pair)
         elif word not in lexicon:
@@ -28,7 +28,7 @@ def scan(usr_input):
 def convert_number(s):
     try:
         return int(s)
-    except ValueError: 
+    except ValueError:
         return None
 
 if __name__ == '__main__':
