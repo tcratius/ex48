@@ -11,7 +11,7 @@ def scan(usr_input):
     result = []
     usr_input = usr_input.split()
     for word in usr_input:
-        wordtype = lexicon.get(word, None)
+        wordtype = lexicon.get(word, 'error')
         pair = (wordtype, word)
         print pair
         if word in lexicon:
